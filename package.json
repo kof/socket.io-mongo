@@ -1,0 +1,20 @@
+{
+    "name"      : "mongo-redis",
+    "description": "Redis abstraction backed by mongodb.",
+    "version"   : "0.0.1",
+    "engines"   : {
+        "node": "0.6.x"
+    },
+    "keywords": [ "mongodb", "redis", "socket.io", "pubsub"],
+    "author": "Oleg Slobodskoi <oleg008@gmail.com>",
+    "repository": "git://github.com/kof/mongo-redis.git",
+    "dependencies": {
+        "mubsub": "0.0.1"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url" : "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ]
+}
