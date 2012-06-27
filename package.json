@@ -9,7 +9,12 @@
     "author": "Oleg Slobodskoi <oleg008@gmail.com>",
     "repository": "git://github.com/kof/socket.io-mongo.git",
     "dependencies": {
-        "mubsub": "0.0.1"
+        "mubsub": "https://github.com/kof/mubsub/tarball/master",
+        "socket.io": "0.9.6",
+        "underscore": "1.3.3"
+    },
+    "devDependencies": {
+        "qunit": "0.5.2"
     },
     "licenses": [
         {
