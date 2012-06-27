@@ -4,6 +4,12 @@ This store is for people who is already using mongodb and don't want to add redi
 
 Any benches or experiences in comparison to redis are welcome.
 
+### Install
+
+If "msgpack" is installed, it will be used instead of JSON.stringify/parse.
+
+    npm i socket.io-mongo
+
 ### Usage example
 
     var socketio = require('socket.io'),
