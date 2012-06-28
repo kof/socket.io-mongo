@@ -35,9 +35,30 @@ If "msgpack" is installed, it will be used instead of JSON.stringify/parse.
 
 ### Options
 
-You can set everything you would be able to set in mongodb-native driver. Additionally you can set "size" and/or "max" for capped collection, which is used by mubsub then.
+    // Default options
+    {
+        // collection name is prefix + name
+        collectionPrefix: 'socket.io.',
+        // capped collection name
+        streamCollection: 'stream',
+        // collection name used for key/value storage
+        storageCollection: 'storage',
+        // id that uniquely identifies this node
+        nodeId: null,
+        // max size in bytes for capped collection
+        size: 100000,
+        // max number of documents inside of capped collection
+        num: null,
+        // db url e.g. "mongodb://localhost:27017/yourdb"
+        url: null,
+        // optionally you can pass everything separately
+        host: 'localhost',
+        port: 27017,
+        db: 'socketio'
+    }
 
     new MongoStore(options);
+
 
 ### Run tests
 

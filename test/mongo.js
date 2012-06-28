@@ -8,8 +8,14 @@ function create() {
     });
 
     store.on('error', console.error);
+
     return store;
 }
+
+// since we are sharing the same connection between all instances,
+// connection will be closed only if the last instance was destroyed,
+// prevent this
+create();
 
 test('test publishing doesnt get caught by the own store subscriber', function() {
     var a = create(),
@@ -27,7 +33,6 @@ test('test publishing doesnt get caught by the own store subscriber', function()
 
     a.publish('myevent', 'aa');
     b.publish('myevent', 'bb');
-
 });
 
 test('test publishing to multiple subscribers', function() {
@@ -37,16 +42,15 @@ test('test publishing to multiple subscribers', function() {
         messages = 0;
 
     stop();
-    expect(10);
+    expect(19);
 
     function subscription(arg1, arg2, arg3) {
         equal(arg1, 1, 'arg1 is correct');
         equal(arg2, 2, 'arg2 is correct');
         equal(arg3, 3, 'arg3 is correct');
         messages++;
-
-        if (messages == 3) {
-            equal(messages, 3, 'amount of received messages is correct');
+        if (messages == 6) {
+            equal(messages, 6, 'amount of received messages is correct');
             a.destroy();
             b.destroy();
             c.destroy();
