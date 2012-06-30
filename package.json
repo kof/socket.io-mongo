@@ -15,7 +15,8 @@
     },
     "devDependencies": {
         "qunit": "0.5.3",
-        "chainer": "0.0.5"
+        "chainer": "0.0.5",
+        "argsparser": "0.0.6"
     },
     "licenses": [
         {

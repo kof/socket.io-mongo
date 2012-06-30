@@ -61,9 +61,26 @@ If "msgpack" is installed, it will be used instead of JSON.stringify/parse.
 
 ### Benchmarks
 
-On my mb air with locally installed db's 50000 events published and received, using absolutely the same code, only different storages: mongodb - 5700 ms, redis 5200 ms.
+On my mb air with locally installed db's, using absolutely the same code, only different storages. Testing pubsub means each event is published and received, testing storage means every key is set, read and deleted.
 
-    node bench/bench mongo|redis
+    node bench --db mongo --test pubsub --amount 50000
+
+    Testing pubsub , using mongo , amount: 50000 , data: mytestdata
+    pubsub: 5772ms
+
+    node bench --db redis --test pubsub --amount 50000
+
+    Testing pubsub , using redis , amount: 50000 , data: mytestdata
+    pubsub: 5106ms
+
+    node bench --db mongo --test storage --amount 20000
+
+    Testing storage , using mongo , amount: 20000 , data: mytestdata
+    storage: 10147ms
+
+    node bench --db redis --test storage --amount 20000
+    Testing storage , using redis , amount: 20000 , data: mytestdata
+    storage: 6134ms
 
 ### Run tests
 
