@@ -61,6 +61,8 @@ If "msgpack" is installed, it will be used instead of JSON.stringify/parse.
 
 ### Benchmarks
 
+On my mb air with locally installed db's 50000 events published and received, using absolutely the same code, only different storages: mongodb - 5700 ms, redis 5200 ms.
+
     node bench/bench mongo|redis
 
 ### Run tests
