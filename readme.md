@@ -59,6 +59,9 @@ If "msgpack" is installed, it will be used instead of JSON.stringify/parse.
 
     new MongoStore(options);
 
+### Benchmarks
+
+    node bench/bench mongo|redis
 
 ### Run tests
 
