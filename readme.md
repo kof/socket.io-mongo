@@ -73,11 +73,11 @@ On my mb air with locally installed db's, using absolutely the same code, only d
 
     node bench --db mongo --test storage --amount 20000
     Testing storage , using mongo , amount: 20000 , data: mytestdata
-    storage: 10147ms
+    storage: 8382ms
 
     node bench --db redis --test storage --amount 20000
     Testing storage , using redis , amount: 20000 , data: mytestdata
-    storage: 6134ms
+    storage: 6224ms
 
 ### Run tests
 
