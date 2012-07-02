@@ -35,6 +35,24 @@ test('test publishing doesnt get caught by the own store subscriber', function()
     b.publish('myevent', 'bb');
 });
 
+test('unsubscribe', function() {
+    var a = create(),
+        b = create();
+
+    stop();
+    expect(1);
+
+    a.subscribe('myevent', function(arg) {
+        equal(arg, 'aa', 'got subscribed event before unsubscribe');
+        a.unsubscribe('myevent', function() {
+            b.publish('myevent');
+            start();
+        });
+    });
+
+    b.publish('myevent', 'aa');
+});
+
 test('test publishing to multiple subscribers', function() {
     var a = create(),
         b = create(),
