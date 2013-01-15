@@ -1,9 +1,9 @@
 {
     "name" : "socket.io-mongo",
     "description": "Socket.io store implementation backed by mongodb.",
-    "version" : "0.0.8",
+    "version" : "0.0.9",
     "engines" : {
-        "node": "0.6.x"
+        "node": ">=0.6.x"
     },
     "keywords": [ "mongodb", "socket.io", "pubsub"],
     "author": "Oleg Slobodskoi <oleg008@gmail.com>",
